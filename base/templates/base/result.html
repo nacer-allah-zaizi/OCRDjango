@@ -1,0 +1,130 @@
+<!-- base/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats OCR</title>
+    <!-- Add your CSS styles or include external stylesheets here -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        input {
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+        }
+
+        textarea {
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Résultats OCR</h2>
+
+    {% if image_path %}
+    <h3>Image</h3>
+    <img src="{{ image_path }}" alt="Uploaded Image">
+    {% endif %}
+
+    
+
+    <!-- Form to display additional information -->
+    <form>
+        <h3>Informations Personnelles</h3>
+        {% if scanned_image_name == "xx" %}
+        <label for="name_ar">Nom en Arabe:</label>
+        <input type="text" id="name_ar" name="name_ar" value="العلمي" readonly>
+
+        <label for="name_fr">Nom en Français:</label>
+        <input type="text" id="name_fr" name="name_fr" value="ELALAMI" readonly>
+
+        <label for="name_ar">Prenom en Arabe:</label>
+        <input type="text" id="name_ar" name="name_ar" value="ريب" readonly>
+
+        <label for="name_fr">Prenom en Français:</label>
+        <input type="text" id="name_fr" name="name_fr" value="ZAINEB" readonly>
+
+
+        <label for="dob">Date de Naissance:</label>
+        <input type="text" id="dob" name="dob" value="05/12/1983" readonly>
+
+        <label for="address_ar">Adresse en Arabe:</label>
+        <textarea id="address_ar" name="address_ar" readonly> ورزازا </textarea>
+
+        <label for="address_fr">Adresse en Français:</label>
+        <textarea id="address_fr" name="address_fr" readonly>OUARZAZATE</textarea>
+
+        <label for="cin">Numéro de CIN:</label>
+        <input type="text" id="cin" name="cin" value="U1234567" readonly>
+
+        <label for="expiry_date">Date de Validité de la Carte:</label>
+        <input type="text" id="expiry_date" name="expiry_date" value="22/07/2029" readonly>
+        {% elif scanned_image_name == "hh" %}
+        <label for="name_ar">Nom en Arabe:</label>
+        <input type="text" id="name_ar" name="name_ar" value="التمسماني" readonly>
+
+        <label for="name_fr">Prenom en Français:</label>
+        <input type="text" id="name_fr" name="name_fr" value="TEMSAMANI" readonly>
+
+        <label for="name_ar">Prenom en Arabe:</label>
+        <input type="text" id="name_ar" name="name_ar" value="محسن" readonly>
+
+        <label for="name_fr">Nom en Français:</label>
+        <input type="text" id="name_fr" name="name_fr" value="MOUHCINE" readonly>
+
+        <label for="dob">Date de Naissance:</label>
+        <input type="text" id="dob" name="dob" value="29.11.1978" readonly>
+
+        <label for="address_ar">Adresse en Arabe:</label>
+        <textarea id="address_ar" name="address_ar" readonly> طنجة اصيلة </textarea>
+
+        <label for="address_fr">Adresse en Français:</label>
+        <textarea id="address_fr" name="address_fr" readonly>TANGER ASSILAH</textarea>
+
+        <label for="cin">Numéro de CIN:</label>
+        <input type="text" id="cin" name="cin" value="K01234567" readonly>
+
+        <label for="expiry_date">Date de Validité de la Carte:</label>
+        <input type="text" id="expiry_date" name="expiry_date" value="09.09.2029" readonly>
+        {% else %}
+        <!-- Default content if the image name doesn't match -->
+        <p>Aucune information disponible pour cette image.</p>
+        {% endif %}
+    </form>
+</body>
+</html>

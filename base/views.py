@@ -76,5 +76,7 @@ def perform_ocr(image_path):
     return ocr_result
 
 def process_document(document_path):
-    # Effectuer le traitement sur le document (à adapter selon vos besoins)
-    pass
+    print('////////////////////////////////')
+    
+    print('??????????????????????????????')
+    
